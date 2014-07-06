@@ -3,6 +3,7 @@
 0 1 2 ... N - 1, N のうち２つを取り出すイメージ
 """
 
+
 class SumOfPower:
     def findSum(self, a):
         l = len(a)
