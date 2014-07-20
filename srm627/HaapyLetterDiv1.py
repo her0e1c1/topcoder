@@ -2,6 +2,10 @@
 from util import L, memo
 
 """
+.. note::
+   この問題は、答えが予め制限されているので、
+   この文字がWinning Letterであるか？を判別するようなアルゴリズムにすればよい
+
 同じものを含む順列から、固定数取り出す問題の考え方
 --------------------------------------------------
 
@@ -15,6 +19,10 @@ from util import L, memo
 10個の要素をもつ順列から2つ取り出して行く場合は、
 10C2 * 8C2 ... 2C2
 を計算することになる
+
+.. note::
+    この問題では、どれを取ったかを記録する必要があるが、
+    どういった順番で取ったかは区別しない（だからキャッシュできる）
 
 データの保持の仕方
 -------------------
@@ -43,7 +51,31 @@ run1を改良してrunを作成
 """
 
 
+### Answer
 def run(letters):
+    res = ''
+    # for each letter ch, can we do it?
+    for ch in sorted(set(letters)):
+        # get a dict of distinct letters and counts
+        other = { x : letters.count(x) for x in letters if x != ch }
+        while len(other) > 1:  # at least two different ones
+            # sort by frequency
+            least = sorted([ (other[x],x) for x in other.keys() ])
+            # remove a letter of each of the two most frequent:
+            a = least[-1][1]
+            b = least[-2][1]
+            def dec(y):
+                other[y] -= 1
+                if other[y] == 0:
+                    other.pop(y)
+            dec(a)
+            dec(b)
+        if (len(other) == 0) or (other[other.keys()[0]] < letters.count(ch)) :
+            res += ch
+    return res
+
+
+def run2(letters):
     letters = sorted(letters)
     length = len(letters)
     chars = sorted(list(set(letters)))
