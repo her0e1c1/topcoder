@@ -19,18 +19,10 @@ char run(string letters){
       cout << maxstr << " \n";
     }
   }
-
-  int other = 0;
-  for (int i = 0; i < 51; i++){
-    if (i != maxstr-'a')
-      other += buff[i];
-  }
-  
-  return maxstr ? maxnum > other : '.';
+  return maxstr ? 2 * maxnum > letters.size() : '.';
 }
 
 int main(){
-
   string s = "ababac";
   run(s);
 }
