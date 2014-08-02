@@ -36,9 +36,17 @@ public:
 #define A(x, ...)                               \
   int __ ## x [] = {__VA_ARGS__};               \
   vector<int> x(__ ## x, __ ## x + SIZE(__ ## x))
+#define P(x) cout << #x << " = " << (x) << endl;
 int main(){
-  V(1, 2, 3);
-  A(a, 1, 2, 3);
-  A(b, 1, 2, 3);
-  cout << a[0];
+  BoxesDiv2 b;
+  A(v1, 8,8);
+  P(b.findSize(v1));
+  A(v2, 5,6);
+  P(b.findSize(v2));
+  A(v3, 1,7);
+  P(b.findSize(v3));
+  A(v4, 1,1,13,1,1);
+  P(b.findSize(v4));
+  A(v5, 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32);
+  P(b.findSize(v5));
 }
