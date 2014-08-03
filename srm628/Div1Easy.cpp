@@ -92,8 +92,7 @@ long run(long n){
     int root = getRoot(n, i);
     // cout << root << " ," << i << endl;
     if (root != -1 && countDivisors(root) == i){
-      if (root < ret)
-        ret = root;
+      ret = min<long>(ret, root);
     }
   }
   return ret == INF ? -1 : ret;
