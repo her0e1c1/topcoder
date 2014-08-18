@@ -63,6 +63,7 @@ using namespace std;
 typedef long long LL;
 typedef long double LD;
 typedef vector<int> VI;
+typedef vector<double> VD;
 typedef vector<VI> VVI;
 typedef vector<string> VS;
 typedef pair<int,int> PII;
