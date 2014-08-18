@@ -49,6 +49,16 @@ using namespace std;
 #define VT value_type
 #define IT itrator
 
+
+#define P(x) cout << #x << " = " << (x) << endl;
+#define PE(x)                                   \
+  for (int i = 0 ; i < (x).size(); i++){        \
+    cout << #x << "[" << i << "]" << " = " << (x)[i] << endl;   \
+  }
+#define V(x, ...)                               \
+  string __ ## x [] = {__VA_ARGS__};               \
+  vector<string> x(__ ## x, __ ## x + SIZE(__ ## x))
+
 //typedef
 typedef long long LL;
 typedef long double LD;
