@@ -48,16 +48,16 @@ using namespace std;
 #define MP make_pair 
 #define VT value_type
 #define IT itrator
-
+#define INF (double)(1 << 30)
 
 #define P(x) cout << #x << " = " << (x) << endl;
 #define PE(x)                                   \
   for (int i = 0 ; i < (x).size(); i++){        \
     cout << #x << "[" << i << "]" << " = " << (x)[i] << endl;   \
   }
-#define V(x, ...)                               \
-  string __ ## x [] = {__VA_ARGS__};               \
-  vector<string> x(__ ## x, __ ## x + SIZE(__ ## x))
+#define V(T, x, ...)                                 \
+  T __ ## x [] = {__VA_ARGS__};               \
+  vector<T> x(__ ## x, __ ## x + SIZE(__ ## x))
 
 //typedef
 typedef long long LL;
@@ -76,6 +76,5 @@ const double EPS = 1e-10;
 const double PI  = acos(-1.0);
 //const long long MOD = 100.000.009
 const long long MOD =   1000000009;
-
 
 #endif  // TOPCODER
