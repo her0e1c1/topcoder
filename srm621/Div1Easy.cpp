@@ -29,9 +29,10 @@ double run(VI x, VI y, VI r, int z){
     double d = dest(i);
     double begin = d - R[i];
     double end = d + R[i];
-    if (begin > 0)
+    if (0 <= begin && begin <= z)
       plots.push_back(begin);
-    plots.push_back(end);
+    if (0 <= end && end <= z)
+      plots.push_back(end);
   }
 
   // 全ての境界線を求めたら、順番にソートする
@@ -48,23 +49,11 @@ double run(VI x, VI y, VI r, int z){
       int d = dest(k);
       double b = d - R[k];
       double e = d + R[k];
-      if (b <= begin && end <= e){
-        // P(d);
+      if (b <= begin && end <= e)
         in_a_city = true;
-      }
     }
-    if (! in_a_city){
-      if (begin <= z && z <= end){
-        // P(begin)
-        // P(end)
-        length += z - begin;
-      }
-      else if (end <= z){
-        // P(begin)
-        // P(end)
+    if (! in_a_city)
         length += end - begin;
-      }
-    }
   }
   return length / (double)z;
 }
@@ -80,8 +69,8 @@ int main(){
   // V(int, v12, 10);
   // // P(run(v10, v11, v12, 10));
 
-  // V(int, v20, 10);
-  // V(int, v21, 10);
+  V(int, v20, 10);
+  V(int, v21, 10);
   V(int, v22, 10);
   P(run(v20, v21, v22, 10));
 
