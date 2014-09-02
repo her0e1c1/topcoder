@@ -47,7 +47,7 @@ using namespace std;
 #define PB push_back 
 #define MP make_pair 
 #define VT value_type
-#define IT itrator
+#define IT iterator
 #define INF (double)(1 << 30)
 
 #define P(x) cout << #x << " = " << (x) << endl;
