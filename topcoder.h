@@ -28,7 +28,7 @@
 using namespace std;
 
 //define
-#define FOR(k,a,b) for(typeof(a) k=(a); k < (b); k++)
+#define FOR(k,a,b) for(__typeof(a) k=(a); k < (b); k++)
 #define REP(k,a) FOR(k,0,a)
 #define ALL(c) (c).begin(), (c).end()  
 #define RALL(a) (a).rbegin(), (a).rend()
