@@ -70,10 +70,8 @@ map <pair<UL, int>, UL> M;
 UL
 dfs(long long n, int index)  // base 0
 {
-  if (n == 0)
-    return 1;
-  if (index < 0 || n < 0 || n > ((UL)1 << (index + 3)))
-    return 0;
+  if (n == 0) return 1;
+  if (index < 0 || n < 0 || n > ((UL)1 << (index + 3))) return 0;
   // Memo
   if (M.find(make_pair(n, index)) != M.end())
     return M[make_pair(n, index)];
@@ -82,14 +80,7 @@ dfs(long long n, int index)  // base 0
   UL next1 = n - ((UL)1 << index);  // 一枚使う
   UL next2 = n - ((UL)1 << (index + 1));  // 二枚使う
 
-  long long ret = 0;
-  ret += dfs(next0, index - 1);
-  ret += dfs(next1, index - 1);
-  ret += dfs(next2, index - 1);
-
-  M.insert(make_pair(make_pair(n, index), ret));
-
-  return ret;
+  return M[make_pair(n, index)] = dfs(next0, index - 1) + dfs(next1, index - 1) + dfs(next2, index - 1);
 }
 
 long long
