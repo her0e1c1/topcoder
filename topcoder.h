@@ -34,7 +34,7 @@ using namespace std;
 #define RALL(a) (a).rbegin(), (a).rend()
 #define DUMP(x)  cerr << #x << " = " << (x) << endl;
 #define DEBUG(x) cerr << #x << " = " << (x) << " (L" << __LINE__ << ")" << " " << __FILE__ << endl;
-#define EACH(i,c)    for(typeof((c).begin()) i=(c).begin(); i!=(c).end(); ++i)
+#define EACH(i,c)    for(__typeof((c).begin()) i=(c).begin(); i!=(c).end(); ++i)
 #define EXIST(s,e) ((s).find(e)!=(s).end())
 #define SORT(c) sort((c).begin(),(c).end())
 #define CLR(a) memset((a), 0 ,sizeof(a))
