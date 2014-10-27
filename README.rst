@@ -28,6 +28,10 @@ srm633
 - Div2Easy
     - 再帰を使って記述する
 
+- Div1Easy
+    - x - x % s == s * (x // s) の証明
+    - vectorの和 (pythonの [1,2,3] + [4,5] = [1,2,3,4,5])
+
 srm629
 ------
 - Div2Medium
