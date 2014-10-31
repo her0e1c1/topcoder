@@ -6,11 +6,10 @@ string run(string s, string t)
   for(int i = 0; i < s.size(); i++){
     if (s[i] == t[cur])
       cur++;
+    if (cur == t.size())
+      return "Yep, it's wood.";
   }
-  if (cur == t.size())
-    return "Yep, it's wood.";
-  else
-    return "Nope";
+  return "Nope";
 }
 
 int main()
