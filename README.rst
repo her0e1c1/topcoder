@@ -3,6 +3,21 @@
 Topcoder
 ========
 
+References
+===========
+
+問題文
+    - http://community.topcoder.com/tc?module=MatchList
+
+解説
+    - http://apps.topcoder.com/wiki/display/tc/Algorithm+Problem+Set+Analysis
+
+アルゴリズム解説
+    - https://www.topcoder.com/community/data-science/data-science-tutorials/
+
+Purpose
+=========
+
 - C++で記述する
 - 時間をかけてでもきちんと理解する
 - 2週目はJavaなど別の言語を使って解く
