@@ -48,13 +48,20 @@ using namespace std;
 #define MP make_pair 
 #define VT value_type
 #define IT iterator
-#define INF (double)(1 << 30)
+#define INF (int)(1 << 30)
+#define INFD (double)(1UL << 60)
 
 #define P(x) cout << #x << " = " << (x) << endl;
 #define PE(x)                                   \
   for (int i = 0 ; i < (x).size(); i++){        \
     cout << #x << "[" << i << "]" << " = " << (x)[i] << endl;   \
   }
+#define PC(x)  \
+  cout << #x << " = "; \
+  for (int i = 0 ; i < (x).size(); i++){                          \
+    cout << (x)[i] << ", ";   \
+  }  cout << endl;
+
 #define V(T, x, ...)                                 \
   T __ ## x [] = {__VA_ARGS__};               \
   vector<T> x(__ ## x, __ ## x + SIZE(__ ## x))
